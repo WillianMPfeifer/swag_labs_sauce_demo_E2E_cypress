@@ -1,0 +1,63 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+# Cypress Artifacts
+cypress/screenshots/
+cypress/videos/
+cypress/downloads/
+cypress/reports/
+
+# Excluir tudo dentro, exceto .gitkeep
+cypress/screenshots/*
+!cypress/screenshots/.gitkeep
+
+cypress/videos/*
+!cypress/videos/.gitkeep
+
+cypress/reports/*
+!cypress/reports/.gitkeep
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Environment Files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+logs/
+*.log
+*.tmp
+
+# Reports
+.cucumber-json/
+results.json
+.reports/
+
+# Editor / IDE
+.vscode/
+.idea/
+
+# Transient files
+*.cache
+.cache/
+.pytest_cache/
+cypress/.cache/
+
+# Output temporário
+tmp/
+temp/
+
+# Config do Cucumber
+.cucumber/
+
+# Arquivos de ambiente do Cypress
+cypress.env.json

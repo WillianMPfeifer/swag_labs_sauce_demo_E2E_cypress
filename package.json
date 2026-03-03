@@ -1,0 +1,42 @@
+{
+  "name": "cypress-bdd-arquiteture",
+  "version": "1.0.6",
+  "description": "template using cypress with bdd architecture in Javascript",
+  "main": "cypress.config.js",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "cy:run:headed": "cypress run --headed",
+    "cy:run:chrome": "cypress run --browser chrome",
+    "cy:run:firefox": "cypress run --browser firefox",
+    "cy:clean": "rimraf cypress/reports cypress/cucumber-json cypress/videos cypress/screenshots",
+    "cy:report": "node cucumber-html-report.js",
+    "cy:debug": "cross-env CYPRESS_VIDEO=true cypress run",
+    "test": "npm run cy:clean && npm run cy:run && npm run cy:report"
+  },
+  "keywords": [
+    "cypress",
+    "automation",
+    "bdd",
+    "cucumber",
+    "e2e-tests"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WillianMPfeifer/Automation-E2E-Web-with-Cypress.git"
+  },
+  "author": "@WillianMPfeifer",
+  "license": "MIT",
+
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^23.2.1",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.8",
+    "cross-env": "^7.0.3",
+    "cypress": "^15.11.0",
+    "cypress-plugin-api": "^2.11.2",
+    "cypress-terminal-report": "^7.3.3",
+    "esbuild": "^0.25.0",
+    "multiple-cucumber-html-reporter": "^3.6.2",
+    "rimraf": "^5.0.5"
+  }
+}

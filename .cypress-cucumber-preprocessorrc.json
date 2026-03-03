@@ -1,0 +1,24 @@
+{
+  "json": {
+    "enabled": true,
+    "output": "cypress/cucumber-json/results.json"
+
+  },
+
+  "html": {
+    "enabled": false
+
+  },
+
+  "messages": {
+    "enabled": false
+  },
+
+  "nonGlobalStepDefinitions": false,
+
+  "stepDefinitions": [
+    "cypress/support/ui/steps/**/*.{js,ts}",
+    "cypress/support/api/steps/**/*.{js,ts}"
+  ]
+      
+}
