@@ -1,24 +1,34 @@
-import LoginElements from '../../elements/login/login-elements.js' 
-const login = new LoginElements();
+import loginElements from '../../elements/login/login-elements' 
+const login = new loginElements();
 
 class LoginPage {
-  enterUsername(username) {
+  accessLoginPage() {
+    cy.visit('/')
+    
+    }
+
+  typeUsername(Nome) {
+    cy.get(login.usernameInput()).typeIfNotEmpty(Nome)
 
   }
 
-  enterPassword(password) {
+  typePassword(Senha) {
+    cy.get(login.passwordInput()).typeIfNotEmpty(Senha)
 
   }
 
   clickLoginButton() {
+    cy.get(login.loginButton()).click()
 
   }
 
-  getWelcomeMessage() {
-
+  validateErrorMessage() {
+    cy.get(login.errorMessage()).should('be.visible')
+      
   }
 
-  getErrorMessage() {
+  validateInitialPageTittle() {
+    cy.get(login.initialPageTittle()).should('be.visible')
 
   }
 }
