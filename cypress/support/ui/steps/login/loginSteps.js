@@ -4,45 +4,35 @@ import LoginPage from '../../page-objects/login/loginPOM'
 const login = new LoginPage();
 
 Given('que o usuário está na página de login', () => {
-
-
-});
-
-When('insere um nome de usuário válido', (username) => {
-
+    login.accessLoginPage();
 
 });
 
-When('insere um nome de usuário inválido', (username) => {
+When('insere as credenciais de login:', (dataTable) => {
+        const data = dataTable.hashes();
 
+            data.forEach(element => {
+                login.typeUsername(element.Nome);
+                login.typePassword(element.Senha);
+            });
+            
 });
 
-When('insere uma senha válida', (password) => {
-
-
-});
-
-When('insere uma senha inválida', (password) => {
-
-
-});
 
 When('clica no botão de login', () => {
+    login.clickLoginButton();
 
 
 });
 
 Then('deve ser redirecionado para a página inicial', () => {
+    login.validateInitialPageTittle();
 
 
 });
 
-Then('deve ver uma mensagem de boas-vindas', (message) => {
-
-
-});
-
-Then('deve ver uma mensagem de erro', (message) => {
+Then('deve ver uma mensagem de erro', () => {
+    login.validateErrorMessage();
 
 
 });

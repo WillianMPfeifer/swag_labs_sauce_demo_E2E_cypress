@@ -12,6 +12,14 @@ module.exports = defineConfig({
 
     specPattern: "cypress/e2e/**/*.feature",
     supportFile: "cypress/support/e2e.js",
+    baseUrl: "https://www.saucedemo.com/",
+
+    retries:
+    {
+      runMode: 2,
+      openMode: 0
+
+    },
 
     async setupNodeEvents(on, config) {
         
