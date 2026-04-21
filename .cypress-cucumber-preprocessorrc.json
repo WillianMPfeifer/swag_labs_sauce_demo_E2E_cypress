@@ -18,7 +18,9 @@
 
   "stepDefinitions": [
     "cypress/support/ui/steps/**/*.{js,ts}",
-    "cypress/support/api/steps/**/*.{js,ts}"
+    "cypress/support/api/steps/**/*.{js,ts}",
+    "cypress/support/ui/comuns/**/*.{js,ts}"
+  
   ]
       
 }

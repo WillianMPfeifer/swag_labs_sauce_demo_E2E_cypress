@@ -61,3 +61,6 @@ temp/
 
 # Arquivos de ambiente do Cypress
 cypress.env.json
+
+# Antigravity
+.agents/

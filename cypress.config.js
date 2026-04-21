@@ -8,7 +8,8 @@ module.exports = defineConfig({
   e2e: {
     viewportWidth: 1366,
     viewportHeight: 768,
-    defaultCommandTimeout: 40000,
+    defaultCommandTimeout: 20000,
+    watchForFileChanges: false,
 
     specPattern: "cypress/e2e/**/*.feature",
     supportFile: "cypress/support/e2e.js",
@@ -22,12 +23,15 @@ module.exports = defineConfig({
     },
 
     async setupNodeEvents(on, config) {
-        
-      await addCucumberPreprocessorPlugin(on, config);
 
+      // cypress-terminal-report deve ser registrado ANTES do cucumber preprocessor,
+      // pois no Cypress o último registro de um evento sobrescreve o anterior.
+      // O cucumber preprocessor precisa ser o último a registrar before:run e after:spec.
       installLogsPrinter(on, {
         printLogsToConsole: 'onFail'
       });
+
+      await addCucumberPreprocessorPlugin(on, config);
 
           on(
             "file:preprocessor",
